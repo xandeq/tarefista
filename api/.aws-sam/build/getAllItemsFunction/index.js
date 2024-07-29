@@ -2,7 +2,6 @@ const express = require("express");
 const admin = require("firebase-admin");
 const port = 3000;
 const app = express();
-const serverless = require("serverless-http");
 
 const serviceAccount = require("./firebaseServiceAccountKey.json");
 
@@ -18,5 +17,3 @@ app.use("/api", routes);
 app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}`);
 });
-
-module.exports.handler = serverless(app);
